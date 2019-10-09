@@ -1,0 +1,4 @@
+
+*.pyc
+
+cgap_test/db.sqlite3
