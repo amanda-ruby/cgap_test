@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form action="/participants_form/" method="post">
+                <form action="{% url 'participants_form' %}" method="post">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <input type="submit" value="Submit" />
