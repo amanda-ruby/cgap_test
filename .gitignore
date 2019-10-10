@@ -2,3 +2,5 @@
 *.pyc
 
 cgap_test/db.sqlite3
+
+.DS_Store

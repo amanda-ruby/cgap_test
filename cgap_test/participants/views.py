@@ -4,4 +4,4 @@ from django.shortcuts import render
 # Create your views here.
 
 def participants_form(request):
-    return HttpResponse("Participants form will go here")
+    return render(request, 'participants/participant_form.html', {})
