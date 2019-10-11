@@ -1,9 +1,7 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from . import forms
 
-# Create your views here.
 
 def participants_form(request):
     if request.method == 'GET':
@@ -11,4 +9,7 @@ def participants_form(request):
     else:
         f = forms.ParticipantForm(request.POST)
         f.save()
-        return render(request, 'participants/participant_form.html', {'form': forms.ParticipantForm()})
+        return redirect('participants_list')
+
+def participants_list(request):
+    return render(request, 'participants/participant_list.html', {})
