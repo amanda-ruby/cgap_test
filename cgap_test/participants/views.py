@@ -1,6 +1,8 @@
+from django.forms import modelformset_factory
 from django.shortcuts import redirect, render
 
 from . import forms
+from . import models
 
 
 def participants_form(request):
@@ -12,4 +14,10 @@ def participants_form(request):
         return redirect('participants_list')
 
 def participants_list(request):
-    return render(request, 'participants/participant_list.html', {})
+    ParticipantFormSet = modelformset_factory(models.Participant,
+                                   fields=['name', 'age', 'has_siblings', 'exposures', 'mutations', 'review_status'],
+                                   labels={'name':'', 'age':'', 'has_siblings': '', 'exposures': '', 'mutations':'', 'review_status':''},
+                                   help_texts={'exposures': '', 'mutations': ''})
+    formset  = ParticipantFormSet()
+   
+    return render(request, 'participants/participant_list.html', {'formset': formset})

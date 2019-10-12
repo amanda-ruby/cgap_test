@@ -17,3 +17,15 @@ class ParticipantForm(ModelForm):
 
     def clean_mutations(self):
         return self.make_json(self.cleaned_data['mutations'])
+
+
+class ParticipantListForm(ModelForm):
+
+    class Meta:
+        model = models.Participant
+        fields = ['name', 'age', 'has_siblings', 'exposures', 'mutations']
+
+    def disable_most_fields(self):
+        for field in self.fields:
+            if field.name != 'review_status':
+                field.disabled = True
