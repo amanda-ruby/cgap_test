@@ -1,5 +1,35 @@
-<h1>Participant List</h1>
+{% load static %}
 
-{% for form in formset %}
-    {{ form.as_table }}
-{% endfor %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="{% static "participants/jquery-v3.4.1/jquery-3.4.1.min.js" %}"></script>
+    <link rel="stylesheet" href="{% static "participants/bootstrap-4.3.1-dist/css/bootstrap.min.css" %}"/>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Participant List</h1>
+        </div>
+        <table class="table">
+            <tbody>
+                {% for form in formset %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        {% for field in form %}
+                            <td>{{ field }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+
+
+
+</html>
