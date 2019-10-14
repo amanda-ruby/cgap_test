@@ -2,7 +2,7 @@
 Interview challenge.
 
 *To Run* (These instructions assume knowledge of Python and virtualenv)
-1. Use virtualenv and requirements.txt to create the Python environment.  This project was built with Python 3.7.3.
+1. Use virtualenv and requirements.txt to create the Python environment.  This project was built with Python 3.7.3 and tested on macOS Mojave (although OS shouldn't matter).
 2. Run cgap_test with the command "python manage.py runserver"
 3. Navigate your browser (Chrome preferred) to [ip]:[port]/participants/ to access the submission form, or [ip]:[port]/participants/list to see the list of logged participants.
 
