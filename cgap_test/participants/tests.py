@@ -12,6 +12,7 @@ class ReviewTestCase(TestCase):
         self.assertEqual(tp.review_status, "Not Reviewed")
 
     def testReview(self):
+        """Tests request to update review_status."""
         c = Client()
         c.post('/participants/list/review/1/Reviewed - Accepted/')
         self.assertEqual(Participant.objects.get(name="Amanda Ruby").review_status, "Reviewed - Accepted")
