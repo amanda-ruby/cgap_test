@@ -18,8 +18,8 @@ def participants_list(request):
     ParticipantFormSet = modelformset_factory(models.Participant,
                                    fields=['name', 'age', 'has_siblings', 'exposures', 'mutations', 'review_status'],
                                    labels={'name':'', 'age':'', 'has_siblings': '', 'exposures': '', 'mutations':'', 'review_status':''},
-                                   help_texts={'exposures': '', 'mutations': ''}
-            )
+                                   help_texts={'exposures': '', 'mutations': ''},
+                                   extra=False)
     formset  = ParticipantFormSet()   
     return render(request, 'participants/participant_list.html', {'formset': formset})
 
