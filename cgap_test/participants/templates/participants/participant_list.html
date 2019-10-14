@@ -16,10 +16,9 @@
         <table class="table">
             <tbody>
                 {% for form in formset %}
-                    <tr>
-                        <th scope="row">{{ forloop.counter }}</th>
+                    <tr>                        
                         {% for field in form %}
-                            <td>{{ field }}</td>
+                            <td object="{{ form.id.value }}">{{ field }}</td>
                         {% endfor %}
                     </tr>
                 {% endfor %}
@@ -32,6 +31,17 @@
                 if (!this.id.includes("review")) {
                     this.disabled = true;
                 }
+            })
+        })
+
+        $(":input").on('change', function(event) {
+            rev_value = this.value;
+            console.log(this);
+            obj_id = $(this).parent().attr('object');
+            $.ajax({
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                type: 'POST',
+                url: 'review/' + obj_id + '/' + rev_value + '/' 
             })
         })
     </script>
