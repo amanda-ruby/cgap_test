@@ -25,7 +25,6 @@ def participants_list(request):
 
 def review_participant(request, id, rev_value):
     if request.method == 'POST':
-        print("Made it to view")
         instance = get_object_or_404(models.Participant, id=id)
         instance.review_status = rev_value
         instance.save()
