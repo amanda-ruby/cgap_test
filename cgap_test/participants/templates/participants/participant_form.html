@@ -1,0 +1,25 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<head>
+    <link rel="stylesheet" href="{% static "participants/bootstrap-4.3.1-dist/css/bootstrap.min.css" %}"/>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Submit Participant</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="{% url 'participants_form' %}" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
