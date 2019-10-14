@@ -20,7 +20,7 @@ def participants_list(request):
                                    labels={'name':'', 'age':'', 'has_siblings': '', 'exposures': '', 'mutations':'', 'review_status':''},
                                    help_texts={'exposures': '', 'mutations': ''},
                                    extra=False)
-    formset  = ParticipantFormSet()   
+    formset  = ParticipantFormSet()
     return render(request, 'participants/participant_list.html', {'formset': formset})
 
 def review_participant(request, id, rev_value):
