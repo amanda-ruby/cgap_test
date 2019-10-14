@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.participants_form, name='participants_form'),
-    url(r'^list/', views.participants_list, name='participants_list')
+    path(r'', views.participants_form, name='participants_form'),
+    path(r'list/', views.participants_list, name='participants_list'),
 ]
