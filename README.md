@@ -2,9 +2,10 @@
 Interview challenge.
 
 *To Run* (These instructions assume knowledge of Python and virtualenv)
-1. Use virtualenv and requirements.txt to create the Python environment.  This project was built with Python 3.7.3 and tested on macOS Mojave (although OS shouldn't matter).
-2. Run cgap_test with the command "python manage.py runserver"
-3. Navigate your browser (Chrome preferred) to [ip]:[port]/participants/ to access the submission form, or [ip]:[port]/participants/list to see the list of logged participants.
+1. Download cgap_test.zip to your computer, and extract to location of your choice.
+2. Use virtualenv and requirements.txt to create the Python environment.  This project was built with Python 3.7.3 and tested on macOS Mojave (although OS shouldn't matter).
+3. Run cgap_test with the command "python manage.py runserver"
+4. Navigate your browser (Chrome preferred) to [ip]:[port]/participants/ to access the submission form, or [ip]:[port]/participants/list/ to see the list of logged participants.
 
 *Implementation Notes*
 - Mutations and Environmental Exposures are stored as JSON strings.
